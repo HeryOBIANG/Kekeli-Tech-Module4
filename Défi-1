@@ -1,0 +1,21 @@
+string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+decimal result = 0;
+decimal sum = 0;
+string phrase = "";
+for (int i = 0; i < values.Length; i++)
+{
+    if (decimal.TryParse(values[i], out result))
+    {
+        sum += result;
+    }
+    else
+    {
+        phrase += values[i];
+    }
+}
+
+Console.WriteLine("Message: " + phrase);
+Console.WriteLine("Totale: " + sum);
+
+
+//Liens énoncé: https://learn.microsoft.com/fr-fr/training/modules/csharp-convert-cast/4-challenge
