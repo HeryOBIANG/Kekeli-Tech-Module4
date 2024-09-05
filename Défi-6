@@ -1,0 +1,20 @@
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+string quantity = "";
+string output = "";
+
+// Your work here
+
+int openingPosition = input.IndexOf("<div>");
+int closingPosition = input.IndexOf("</div>");
+openingPosition += 5;
+int length = closingPosition - openingPosition;
+output = input.Substring(openingPosition , length);
+output = output.Replace("&trade", "&reg");
+quantity = output.Substring(output.IndexOf("5") , 4);
+
+Console.WriteLine(quantity);
+Console.WriteLine(output);
+
+
+//Liens énoncé: https://learn.microsoft.com/fr-fr/training/modules/csharp-modify-content/5-exercise-challenge-extract-replace-remove-data
