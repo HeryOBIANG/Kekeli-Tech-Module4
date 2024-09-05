@@ -1,0 +1,20 @@
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+string[] value = orderStream.Split(',');
+Array.Sort(value);
+for (int i = 0; i < value.Length; i++)
+{
+    char[] charArray = value[i].ToCharArray();
+    if(charArray.Length < 4 || charArray.Length > 4)
+    {
+        value[i] = new string(charArray);
+        Console.WriteLine(value[i] + "\t- Error");
+    }
+    else
+    {
+        value[i] = new string(charArray);
+        Console.WriteLine(value[i]);
+    }
+}
+
+
+//Liens énoncé: https://learn.microsoft.com/fr-fr/training/modules/csharp-arrays-operations/7-challenge-2
